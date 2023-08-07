@@ -1,13 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/quiz.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Guess-It</title>
   </head>
   <body>
-    <div id="app"></div>
+    <header class="header">
+      <h1 class="header__title">GuessIt</h1>
+    </header>
+    <section class="rules">
+      <p class="rules">
+        <strong>Rules:</strong>Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Sapiente a nulla odio possimus vel quibusdam dolores
+        molestias, ipsum, pariatur, suscipit amet dolore accusantium.
+      </p>
+      <p class="score">Your score: 5/10 points</p>
+    </section>
+    <section class="question">
+      <div class="question-container">
+        <img src="#" alt="#" class="question-container__image" />
+        <p class="question-container__question">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit?
+        </p>
+        <button class="question-container__button">Start/Next</button>
+      </div>
+    </section>
+    <section class="answers">
+      <div class="answers-container">
+        <p class="answers-container__pop-up">You got 2 points</p>
+        <button class="answers-container__answer">A</button>
+        <button class="answers-container__answer">B</button>
+        <button class="answers-container__answer">C</button>
+        <button class="answers-container__answer">D</button>
+      </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
