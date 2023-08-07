@@ -1,0 +1,31 @@
+@use "./variables" as *;
+
+.rules {
+  text-align: center;
+
+  &__description {
+    padding: 50px;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+  }
+
+  &__button {
+    background-color: $primary-color;
+    margin: 20px;
+    padding: 10px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+
+  &__button:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .rules {
+    padding-top: 200px;
+    width: 50%;
+  }
+}

@@ -11,25 +11,29 @@
       <h1 class="header__title">GuessIt</h1>
     </header>
     <section class="rules">
-      <p class="rules">
-        <strong>Rules:</strong>Lorem ipsum dolor sit amet consectetur
+      <p class="rules__description">
+        <strong>Rules : </strong>Lorem ipsum dolor sit amet consectetur
         adipisicing elit. Sapiente a nulla odio possimus vel quibusdam dolores
         molestias, ipsum, pariatur, suscipit amet dolore accusantium.
       </p>
-      <p class="score">Your score: 5/10 points</p>
+      <button class="rules__button">Let's Play!</button>
     </section>
     <section class="question">
       <div class="question-container">
-        <img src="#" alt="#" class="question-container__image" />
+        <div class="question-container__image">
+          <img src="#" alt="#" class="question-container__image" />
+        </div>
         <p class="question-container__question">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit?
         </p>
-        <button class="question-container__button">Start/Next</button>
       </div>
     </section>
     <section class="answers">
       <div class="answers-container">
-        <p class="answers-container__pop-up">You got 2 points</p>
+        <p class="answers-container__total-score">
+          Your total score: 5/10 points
+        </p>
+        <p class="answers-container__last-score">2 points for the last guess</p>
         <button class="answers-container__answer">A</button>
         <button class="answers-container__answer">B</button>
         <button class="answers-container__answer">C</button>

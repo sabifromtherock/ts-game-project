@@ -1,0 +1,52 @@
+@use "./variables" as *;
+
+.answers {
+  width: 100%;
+  padding: 20px;
+
+  .answers-container {
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: $answers-background-color;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+
+    &__total-score,
+    &__last-score {
+      font-size: 24px;
+      padding: 5px;
+      background-color: $answers-background-color;
+      color: $primary-color;
+    }
+
+    &__answer {
+      font-size: 24px;
+      height: 60px;
+      border-radius: 55px;
+      margin: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .answers {
+    width: 50%;
+
+    .answers-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__total-score,
+      &__last-score {
+        width: 100%;
+      }
+
+      &__answer {
+        width: 40%;
+      }
+    }
+  }
+}

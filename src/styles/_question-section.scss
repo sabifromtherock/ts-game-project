@@ -1,0 +1,28 @@
+@use "./variables" as *;
+
+.question {
+  width: 100%;
+  padding: 20px;
+
+  .question-container {
+    &__image {
+      height: 100px;
+    }
+
+    &__question {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .question {
+    width: 50%;
+
+    .question-container {
+      &__image {
+        height: 250px;
+      }
+    }
+  }
+}
