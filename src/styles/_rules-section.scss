@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+.rules {
+  text-align: center;
+
+  &__description {
+    padding: 30px 50px;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+  }
+
+  &__button {
+    background-color: $primary-color;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+
+  &__button:hover {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+}
