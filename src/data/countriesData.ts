@@ -278,12 +278,6 @@ export const countriesData: Country[] = [
     population: 1402985,
   },
   {
-    name: "Heard Island and McDonald Islands",
-    flag: "https://flagcdn.com/hm.svg",
-    area: 412,
-    population: 0,
-  },
-  {
     name: "Philippines",
     flag: "https://flagcdn.com/ph.svg",
     area: 342353,
@@ -792,12 +786,6 @@ export const countriesData: Country[] = [
     flag: "https://flagcdn.com/do.svg",
     area: 48671,
     population: 10847904,
-  },
-  {
-    name: "Bouvet Island",
-    flag: "https://flagcdn.com/bv.svg",
-    area: 49,
-    population: 0,
   },
   {
     name: "Central African Republic",
