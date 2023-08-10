@@ -11,7 +11,7 @@ let isAnswerButtonClicked = true;
 const answerButtonIds: string[] = ["answerA", "answerB", "answerC", "answerD"];
 
 const rulesDescription = document.querySelector(
-  ".rules__description"
+  ".rules"
 ) as HTMLParagraphElement;
 const playButton = document.querySelector(
   ".rules__button"
