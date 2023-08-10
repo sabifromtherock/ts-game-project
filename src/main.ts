@@ -25,6 +25,9 @@ const answersContainer = document.querySelector(
 const nexQuestionButton = document.querySelector(
   ".question__button"
 ) as HTMLButtonElement;
+const score = document.querySelector(
+  ".question__score"
+) as HTMLParagraphElement;
 
 if (
   !rulesDescription ||
@@ -57,6 +60,9 @@ const handleClickOnPlayButton = () => {
     countryIndex
   );
   handleAnswers();
+  score.innerHTML = `<p>Question number: ${
+    amountOfQuestion + 1
+  } <br/> Your score: <strong style="color: red">${totalScore}</strong></p>`;
 };
 
 const handleClickOnNextButton = () => {
@@ -85,7 +91,11 @@ const handleClickOnNextButton = () => {
     countryIndex
   );
   handleAnswers();
-  questionContainer.innerHTML += `<p>Your score is: ${totalScore} out of ${amountOfQuestion}</p><p>${country.name}'s population : ..............</p>`;
+  score.innerHTML = `<p>Question number: ${
+    amountOfQuestion + 1
+  } <br/> Your score: <strong style="color: red">${totalScore}</strong></p><p style="display: none">${
+    country.name
+  }'s population : ${country.population}</p>`;
 };
 
 const handleAnswers = (): void => {
@@ -129,7 +139,7 @@ const handleAnswers = (): void => {
     });
     const country = countriesData[countryIndex];
 
-    questionContainer.innerHTML += `<p>Your score is: ${totalScore} out of ${amountOfQuestion}</p><p>${country.name}'s population : ${country.population}</p>`;
+    score.innerHTML = `<p>Question number: ${amountOfQuestion} <br/> Your score: <strong style="color: red">${totalScore}</strong></p><p style="color: green"><strong>${country.name}'s population : ${country.population}</strong></p>`;
   };
 
   answerA.addEventListener("click", handleClickOnAnswerButton);
