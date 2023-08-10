@@ -129,7 +129,6 @@ const handleAnswers = (): void => {
     throw new Error("Issue with selector");
 
   const actualData = countriesData[countryIndex][selectedValue];
-  console.log(actualData);
   const answers: number[] = [
     Number(answerA.innerText),
     Number(answerB.innerText),
