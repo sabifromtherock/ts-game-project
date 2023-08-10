@@ -25,7 +25,7 @@ Welcome to the Geography Guess Game! This is a simple guessing game where you an
 To get started with the Morse Code Translator, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/sabifromtherock/ts-game-project.git`
-2. Navigate to the project directory: `cd morse-code-translator`
+2. Navigate to the project directory: `cd ts-game-project`
 3. Install dependencies: `npm install`
 4. Run the development server: `npm run dev`
 
