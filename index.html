@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/quiz.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guess-It</title>
+    <title>3G</title>
   </head>
   <body>
     <header class="header">
-      <h1 class="header__title">GuessIt</h1>
-      <label for="select" class="header__label">Choose a subject:</label>
-      <select id="select" name="Countries" class="header__select">
-        <option value="" disabled selected>Select an option</option>
-        <option value="population" class="header__option">Population</option>
-        <option value="area" class="header__option">Land area</option>
-      </select>
+      <h1 class="header__title">3G</h1>
+      <h4 class="header__sub-title">
+        <strong class="header__first-letter">G</strong>eography
+        <strong class="header__first-letter">G</strong>uess
+        <strong class="header__first-letter">G</strong>ame
+      </h4>
       <button class="header__restart-button">Restart</button>
     </header>
     <section class="rules">
@@ -59,6 +58,17 @@
           key to mastering this game!
         </li>
       </ul>
+
+      <label for="select" class="rules__label">Choose a subject:</label>
+      <select id="select" name="Countries" class="rules__select">
+        <option value="" disabled selected class="rules__option">
+          Select an option
+        </option>
+        <option value="population" class="rules__option">
+          Countries Population
+        </option>
+        <option value="area" class="rules__option">Countries Land area</option>
+      </select>
 
       <button class="rules__button">Let's Play!</button>
     </section>

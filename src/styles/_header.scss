@@ -2,14 +2,25 @@
 
 .header {
   background-color: $secondary-color;
-  padding: 20px;
-  height: 80px;
+  padding: 10px;
+  height: 100px;
   width: 100%;
 
   &__title {
     background-color: $secondary-color;
     color: $primary-color;
     font-size: 40px;
+  }
+
+  &__sub-title {
+    background-color: $secondary-color;
+    color: $primary-color;
+  }
+
+  &__first-letter {
+    font-size: 30px;
+    background-color: $secondary-color;
+    color: $tertiary-color;
   }
 
   &__restart-button {

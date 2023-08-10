@@ -33,7 +33,7 @@ const restartButton = document.querySelector(
   ".header__restart-button"
 ) as HTMLButtonElement;
 const selectElement = document.querySelector(
-  ".header__select"
+  ".rules__select"
 ) as HTMLSelectElement;
 
 if (
@@ -53,12 +53,11 @@ export let selectedValue: "population" | "area" = "population";
 const handleSelectOptions = (): void => {
   //@ts-ignore --> Type 'string' is not assignable to type '"population" | "area"'.ts(2322)
   selectedValue = selectElement.value;
-  if (selectedValue === "area") questionText = "land area";
+  if (selectedValue === "area") questionText = "land area (km&sup2;)";
 };
 
 const handleClickOnPlayButton = (): void => {
-  console.log(selectedValue);
-
+  selectElement.style.display = "none";
   playButton.style.display = "none";
   nexQuestionButton.style.display = "";
   answersContainer.style.display = "";
