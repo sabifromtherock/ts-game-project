@@ -129,7 +129,12 @@ const handleAnswers = (): void => {
     const clickedButtonText: number = Number(clickedButton.innerText);
     amountOfQuestion++;
 
-    if (closest === clickedButtonText) totalScore++;
+    if (closest === clickedButtonText) {
+      totalScore++;
+      clickedButton.style.color = "green";
+    } else {
+      clickedButton.style.color = "red";
+    }
 
     answerButtons.forEach((button) => {
       isAnswerButtonClicked = false;
