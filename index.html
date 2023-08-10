@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./quiz.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3G</title>
+    <script type="module" crossorigin src="./assets/index-47a30af1.js"></script>
+    <link rel="stylesheet" href="./assets/index-7bdc9ca0.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">3G</h1>
+      <h4 class="header__sub-title">
+        <strong class="header__first-letter">G</strong>eography
+        <strong class="header__first-letter">G</strong>uess
+        <strong class="header__first-letter">G</strong>ame
+      </h4>
+      <button class="header__restart-button">Restart</button>
+    </header>
+    <section class="rules">
+      <p class="rules__header">
+        <strong>Rules : </strong>
+      </p>
+      <ul class="rules__description">
+        <li>
+          <strong>Number of Questions:</strong><br />
+          The game consists of 10 questions that you must answer.
+        </li>
+        <li>
+          <strong>Database-Derived Questions:</strong> <br />
+          All questions are generated from a static database, ensuring a unique
+          and diverse set of challenges.
+        </li>
+        <li>
+          <strong>Subject Selection:</strong><br />
+          You can choose between two subjects: 'Countries Population' or
+          'Countries Land Area'. This allows you to focus on your preferred area
+          of knowledge.
+        </li>
+        <li>
+          <strong>Answer Selection:</strong><br />
+          Each question will present 4 possible answers, but it's important to
+          note that the correct answer may not always be among the randomly
+          selected choices.
+        </li>
+        <li>
+          <strong>Scoring System:</strong><br />
+          You'll be awarded 1 point if your guess is either the correct answer
+          or the closest guess to the correct answer.
+        </li>
+        <li>
+          <strong>Restart Button:</strong><br />
+          At any time during the game, you can restart by clicking on the
+          "Restart" button. This resets the game.
+        </li>
+        <li>
+          <strong>Have Fun:</strong><br />
+          Enjoy the challenge and have fun testing your skills with questions
+          derived from the database. Your ability to make educated guesses is
+          key to mastering this game!
+        </li>
+      </ul>
+
+      <label for="select" class="rules__label">Choose a subject:</label>
+      <select id="select" name="Countries" class="rules__select">
+        <option value="" disabled selected class="rules__option">
+          Select an option
+        </option>
+        <option value="population" class="rules__option">
+          Countries Population
+        </option>
+        <option value="area" class="rules__option">Countries Land area</option>
+      </select>
+
+      <button class="rules__button">Let's Play!</button>
+    </section>
+    <section class="question">
+      <div class="question-container"></div>
+      <p class="question__score"></p>
+      <button class="question__button">Next Question!</button>
+    </section>
+    <section class="answers">
+      <div class="answers-container" style="display: none"></div>
+    </section>
+    
+  </body>
+</html>
