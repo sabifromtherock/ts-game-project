@@ -9,36 +9,52 @@
   <body>
     <header class="header">
       <h1 class="header__title">GuessIt</h1>
+      <button class="header__restart-button">Restart</button>
     </header>
     <section class="rules">
-      <p class="rules__description">
-        <strong>Rules : </strong>Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Sapiente a nulla odio possimus vel quibusdam dolores
-        molestias, ipsum, pariatur, suscipit amet dolore accusantium.
+      <p class="rules__header">
+        <strong>Rules : </strong>
       </p>
+      <ul class="rules__description">
+        <li>
+          <strong>Number of Questions:</strong> The game consists of 10
+          questions that you must answer.
+        </li>
+        <li>
+          <strong>Database-Derived Questions:</strong> All questions are
+          generated from a static database, ensuring a unique and diverse set of
+          challenges.
+        </li>
+        <li>
+          <strong>Answer Selection:</strong> Each question will present 4
+          possible answers, but it's important to note that the correct answer
+          may not always be among the randomly selected choices.
+        </li>
+        <li>
+          <strong>Scoring System:</strong> You'll be awarded 1 point if your
+          guess is either the correct answer or the closest guess to the correct
+          answer.
+        </li>
+        <li>
+          <strong>Restart Button:</strong> At any time during the game, you can
+          restart by clicking on the "Restart" button. This resets the game.
+        </li>
+        <li>
+          <strong>Have Fun:</strong> Enjoy the challenge and have fun testing
+          your skills with questions derived from the database. Your ability to
+          make educated guesses is key to mastering this game!
+        </li>
+      </ul>
+
       <button class="rules__button">Let's Play!</button>
     </section>
     <section class="question">
-      <div class="question-container">
-        <div class="question-container__image">
-          <img src="#" alt="#" class="question-container__image" />
-        </div>
-        <p class="question-container__question">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit?
-        </p>
-      </div>
+      <div class="question-container"></div>
+      <p class="question__score"></p>
+      <button class="question__button">Next Question!</button>
     </section>
     <section class="answers">
-      <div class="answers-container">
-        <p class="answers-container__total-score">
-          Your total score: 5/10 points
-        </p>
-        <p class="answers-container__last-score">2 points for the last guess</p>
-        <button class="answers-container__answer">A</button>
-        <button class="answers-container__answer">B</button>
-        <button class="answers-container__answer">C</button>
-        <button class="answers-container__answer">D</button>
-      </div>
+      <div class="answers-container" style="display: none"></div>
     </section>
     <script type="module" src="/src/main.ts"></script>
   </body>

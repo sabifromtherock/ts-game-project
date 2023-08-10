@@ -10,8 +10,24 @@
     }
 
     &__question {
+      height: 108px;
+      padding-top: 20px;
       font-size: 24px;
+      font-weight: 800;
     }
+  }
+
+  &__button {
+    background-color: $primary-color;
+    margin: 20px;
+    padding: 10px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+  }
+
+  &__score {
+    font-size: 20px;
+    height: 72px;
   }
 }
 
@@ -21,7 +37,7 @@
 
     .question-container {
       &__image {
-        height: 250px;
+        height: 150px;
       }
     }
   }
