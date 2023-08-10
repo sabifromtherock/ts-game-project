@@ -28,17 +28,22 @@ const nexQuestionButton = document.querySelector(
 const score = document.querySelector(
   ".question__score"
 ) as HTMLParagraphElement;
+const restartButton = document.querySelector(
+  ".header__restart-button"
+) as HTMLButtonElement;
 
 if (
   !rulesDescription ||
   !playButton ||
   !questionContainer ||
   !answersContainer ||
-  !nexQuestionButton
+  !nexQuestionButton ||
+  !restartButton
 )
   throw new Error("Issue with selector");
 
 nexQuestionButton.style.display = "none";
+restartButton.style.display = "none";
 
 const handleClickOnPlayButton = () => {
   playButton.style.display = "none";
@@ -46,6 +51,7 @@ const handleClickOnPlayButton = () => {
   answersContainer.style.display = "";
   rulesDescription.innerHTML = "";
   nexQuestionButton.disabled = isAnswerButtonClicked;
+  restartButton.style.display = "";
 
   // generate radom country question
   questionContainer.innerHTML = `<div class="question-container__image"><img src="${countriesData[countryIndex].flag}" alt="The flag of ${countriesData[countryIndex].name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${countriesData[countryIndex].name}'s population?</p>`;
@@ -153,5 +159,10 @@ const handleAnswers = (): void => {
   answerD.addEventListener("click", handleClickOnAnswerButton);
 };
 
+const handleRestart = () => {
+  window.location.reload();
+};
+
+restartButton.addEventListener("click", handleRestart);
 playButton.addEventListener("click", handleClickOnPlayButton);
 nexQuestionButton.addEventListener("click", handleClickOnNextButton);
