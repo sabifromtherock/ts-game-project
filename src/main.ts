@@ -5,9 +5,10 @@ import { createAnswerInnerHTML } from "./utils/createAnswerInnerHTML";
 
 let totalScore: number = 0;
 let countryIndex: number = getRandomNumber(0, 247);
-let nextButtonCounter = 1;
-let amountOfQuestion = 0;
-let isAnswerButtonClicked = true;
+let nextButtonCounter: number = 1;
+let amountOfQuestion: number = 0;
+let isAnswerButtonClicked: boolean = true;
+let questionText: string = "population";
 const answerButtonIds: string[] = ["answerA", "answerB", "answerC", "answerD"];
 
 const rulesDescription = document.querySelector(
@@ -31,6 +32,9 @@ const score = document.querySelector(
 const restartButton = document.querySelector(
   ".header__restart-button"
 ) as HTMLButtonElement;
+const selectElement = document.querySelector(
+  ".header__select"
+) as HTMLSelectElement;
 
 if (
   !rulesDescription ||
@@ -45,7 +49,16 @@ if (
 nexQuestionButton.style.display = "none";
 restartButton.style.display = "none";
 
-const handleClickOnPlayButton = () => {
+export let selectedValue: "population" | "area" = "population";
+const handleSelectOptions = (): void => {
+  //@ts-ignore --> Type 'string' is not assignable to type '"population" | "area"'.ts(2322)
+  selectedValue = selectElement.value;
+  if (selectedValue === "area") questionText = "land area";
+};
+
+const handleClickOnPlayButton = (): void => {
+  console.log(selectedValue);
+
   playButton.style.display = "none";
   nexQuestionButton.style.display = "";
   answersContainer.style.display = "";
@@ -54,7 +67,7 @@ const handleClickOnPlayButton = () => {
   restartButton.style.display = "";
 
   // generate radom country question
-  questionContainer.innerHTML = `<div class="question-container__image"><img src="${countriesData[countryIndex].flag}" alt="The flag of ${countriesData[countryIndex].name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${countriesData[countryIndex].name}'s population?</p>`;
+  questionContainer.innerHTML = `<div class="question-container__image"><img src="${countriesData[countryIndex].flag}" alt="The flag of ${countriesData[countryIndex].name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${countriesData[countryIndex].name}'s ${questionText}?</p>`;
 
   // generate random answer options to the question
   const startingMultiplier: number = getRandomNumber(5, 12);
@@ -84,7 +97,7 @@ const handleClickOnNextButton = () => {
   questionContainer.innerHTML = "";
   countryIndex = getRandomNumber(0, 247);
   const country = countriesData[countryIndex];
-  questionContainer.innerHTML += `<div class="question-container__image"><img src="${country.flag}" alt="The flag of ${country.name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${country.name}'s population?</p>`;
+  questionContainer.innerHTML += `<div class="question-container__image"><img src="${country.flag}" alt="The flag of ${country.name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${country.name}'s ${questionText}?</p>`;
 
   // generate random answer options to the question
   answersContainer.innerHTML = "";
@@ -101,7 +114,7 @@ const handleClickOnNextButton = () => {
     amountOfQuestion + 1
   } <br/> Your score: <strong style="color: red">${totalScore}</strong></p><p style="display: none">${
     country.name
-  }'s population : ${country.population}</p>`;
+  }'s ${selectedValue} : ${country[selectedValue]}</p>`;
 };
 
 const handleAnswers = (): void => {
@@ -116,7 +129,8 @@ const handleAnswers = (): void => {
   if (!answerA || !answerB || !answerC || !answerD)
     throw new Error("Issue with selector");
 
-  const actualPopulation = countriesData[countryIndex].population;
+  const actualData = countriesData[countryIndex][selectedValue];
+  console.log(actualData);
   const answers: number[] = [
     Number(answerA.innerText),
     Number(answerB.innerText),
@@ -125,7 +139,7 @@ const handleAnswers = (): void => {
   ];
 
   const closest = answers.reduce((prev, curr) => {
-    return Math.abs(curr - actualPopulation) < Math.abs(prev - actualPopulation)
+    return Math.abs(curr - actualData) < Math.abs(prev - actualData)
       ? curr
       : prev;
   });
@@ -150,7 +164,7 @@ const handleAnswers = (): void => {
     });
     const country = countriesData[countryIndex];
 
-    score.innerHTML = `<p>Question number: ${amountOfQuestion} <br/> Your score: <strong style="color: red">${totalScore}</strong></p><p style="color: green"><strong>${country.name}'s population : ${country.population}</strong></p>`;
+    score.innerHTML = `<p>Question number: ${amountOfQuestion} <br/> Your score: <strong style="color: red">${totalScore}</strong></p><p style="color: green"><strong>${country.name}'s ${questionText} : ${country[selectedValue]}</strong></p>`;
   };
 
   answerA.addEventListener("click", handleClickOnAnswerButton);
@@ -159,10 +173,7 @@ const handleAnswers = (): void => {
   answerD.addEventListener("click", handleClickOnAnswerButton);
 };
 
-const handleRestart = () => {
-  window.location.reload();
-};
-
-restartButton.addEventListener("click", handleRestart);
+restartButton.addEventListener("click", () => window.location.reload());
 playButton.addEventListener("click", handleClickOnPlayButton);
 nexQuestionButton.addEventListener("click", handleClickOnNextButton);
+selectElement.addEventListener("change", handleSelectOptions);

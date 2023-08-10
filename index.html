@@ -9,6 +9,12 @@
   <body>
     <header class="header">
       <h1 class="header__title">GuessIt</h1>
+      <label for="select" class="header__label">Choose a subject:</label>
+      <select id="select" name="Countries" class="header__select">
+        <option value="" disabled selected>Select an option</option>
+        <option value="population" class="header__option">Population</option>
+        <option value="area" class="header__option">Land area</option>
+      </select>
       <button class="header__restart-button">Restart</button>
     </header>
     <section class="rules">
@@ -17,32 +23,40 @@
       </p>
       <ul class="rules__description">
         <li>
-          <strong>Number of Questions:</strong> The game consists of 10
-          questions that you must answer.
+          <strong>Number of Questions:</strong><br />
+          The game consists of 10 questions that you must answer.
         </li>
         <li>
-          <strong>Database-Derived Questions:</strong> All questions are
-          generated from a static database, ensuring a unique and diverse set of
-          challenges.
+          <strong>Database-Derived Questions:</strong> <br />
+          All questions are generated from a static database, ensuring a unique
+          and diverse set of challenges.
         </li>
         <li>
-          <strong>Answer Selection:</strong> Each question will present 4
-          possible answers, but it's important to note that the correct answer
-          may not always be among the randomly selected choices.
+          <strong>Subject Selection:</strong><br />
+          You can choose between two subjects: 'population' or 'land area'. This
+          allows you to focus on your preferred area of knowledge.
         </li>
         <li>
-          <strong>Scoring System:</strong> You'll be awarded 1 point if your
-          guess is either the correct answer or the closest guess to the correct
-          answer.
+          <strong>Answer Selection:</strong><br />
+          Each question will present 4 possible answers, but it's important to
+          note that the correct answer may not always be among the randomly
+          selected choices.
         </li>
         <li>
-          <strong>Restart Button:</strong> At any time during the game, you can
-          restart by clicking on the "Restart" button. This resets the game.
+          <strong>Scoring System:</strong><br />
+          You'll be awarded 1 point if your guess is either the correct answer
+          or the closest guess to the correct answer.
         </li>
         <li>
-          <strong>Have Fun:</strong> Enjoy the challenge and have fun testing
-          your skills with questions derived from the database. Your ability to
-          make educated guesses is key to mastering this game!
+          <strong>Restart Button:</strong><br />
+          At any time during the game, you can restart by clicking on the
+          "Restart" button. This resets the game.
+        </li>
+        <li>
+          <strong>Have Fun:</strong><br />
+          Enjoy the challenge and have fun testing your skills with questions
+          derived from the database. Your ability to make educated guesses is
+          key to mastering this game!
         </li>
       </ul>
 
