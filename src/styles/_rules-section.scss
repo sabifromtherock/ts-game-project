@@ -7,7 +7,12 @@
   &__header {
     padding: 20px;
     font-family: $secondary-font;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    list-style-type: none;
+  }
+
+  &__header {
+    font-size: 2rem;
   }
 
   &__button {
@@ -22,11 +27,22 @@
     background-color: $secondary-color;
     color: $primary-color;
   }
+
+  &__label,
+  &__select {
+    padding: 5px;
+    font-size: 20px;
+  }
+
+  &__select,
+  &__option {
+    border-radius: 10px;
+    background-color: $primary-color;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .rules {
-    // padding-top: 200px;
-    width: 50%;
+    width: 60%;
   }
 }

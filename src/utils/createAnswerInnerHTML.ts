@@ -1,3 +1,4 @@
+import { selectedValue } from "../main";
 import { Country } from "../types/Countries";
 
 export const createAnswerInnerHTML = (
@@ -11,7 +12,7 @@ export const createAnswerInnerHTML = (
     container.innerHTML += `<button class="answers-container__answer" id='${
       buttonIds[i]
     }'>${Math.floor(
-      ((multiplier + i) / 10) * countries[index].population
+      ((multiplier + i) / 10) * countries[index][selectedValue]
     )}</button>`;
   }
 };

@@ -1,4 +1,5 @@
-body {
+body,
+.rules {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +11,7 @@ body {
     &__restart-button {
       position: absolute;
       right: 20px;
-      top: 23px;
+      top: 33px;
     }
   }
 }
