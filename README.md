@@ -10,7 +10,7 @@ Welcome to the Geography Guess Game! This is a simple guessing game where you an
 
 3. **Database-Derived Questions**: All questions are generated from a static database, ensuring a unique and diverse set of challenges for the selected subject.
 
-4. **Answer Selection**: Each question will present 4 possible answers, but it's important to note that the correct answer may not always be among the randomly selected choices.
+4. **Answer Selection**: Each question will offer 4 potential answers, and your task is to select the correct one.
 
 5. **Scoring System**: You'll be awarded 1 point if your guess is either the correct answer or the closest guess to the correct answer. If the correct answer is not presented among the choices, your task is to make the closest possible guess to earn the point.
 
