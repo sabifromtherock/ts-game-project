@@ -66,10 +66,10 @@ const handleClickOnPlayButton = (): void => {
   restartButton.style.display = "";
 
   // generate radom country question
-  questionContainer.innerHTML = `<div class="question-container__image"><img src="${countriesData[countryIndex].flag}" alt="The flag of ${countriesData[countryIndex].name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${countriesData[countryIndex].name}'s ${questionText}?</p>`;
+  questionContainer.innerHTML = `<div class="question-container__image"><img src="${countriesData[countryIndex].flag}" alt="The flag of ${countriesData[countryIndex].name}" class="question-container__image" /></div><p class="question-container__question">What is the ${questionText} of ${countriesData[countryIndex].name}?</p>`;
 
   // generate random answer options to the question
-  const startingMultiplier: number = getRandomNumber(5, 12);
+  const startingMultiplier: number = getRandomNumber(7, 10);
   createAnswerInnerHTML(
     answersContainer,
     answerButtonIds,
@@ -96,11 +96,11 @@ const handleClickOnNextButton = () => {
   questionContainer.innerHTML = "";
   countryIndex = getRandomNumber(0, 247);
   const country = countriesData[countryIndex];
-  questionContainer.innerHTML += `<div class="question-container__image"><img src="${country.flag}" alt="The flag of ${country.name}" class="question-container__image" /></div><p class="question-container__question">Which answer is closest to ${country.name}'s ${questionText}?</p>`;
+  questionContainer.innerHTML += `<div class="question-container__image"><img src="${country.flag}" alt="The flag of ${country.name}" class="question-container__image" /></div><p class="question-container__question">What is the of ${questionText} ${country.name}${questionText}?</p>`;
 
   // generate random answer options to the question
   answersContainer.innerHTML = "";
-  const startingMultiplier: number = getRandomNumber(5, 12);
+  const startingMultiplier: number = getRandomNumber(7, 10);
   createAnswerInnerHTML(
     answersContainer,
     answerButtonIds,
@@ -136,6 +136,7 @@ const handleAnswers = (): void => {
     Number(answerD.innerText),
   ];
 
+  // find the closest answer
   const closest = answers.reduce((prev, curr) => {
     return Math.abs(curr - actualData) < Math.abs(prev - actualData)
       ? curr
@@ -147,11 +148,19 @@ const handleAnswers = (): void => {
     const clickedButtonText: number = Number(clickedButton.innerText);
     amountOfQuestion++;
 
+    // changing the buttons text color
+    clickedButton.style.fontWeight = "700";
     if (closest === clickedButtonText) {
       totalScore++;
       clickedButton.style.color = "green";
     } else {
       clickedButton.style.color = "red";
+      answerButtons.forEach((button) => {
+        if (closest === Number(button.innerText)) {
+          button.style.color = "green";
+          button.style.fontWeight = "700";
+        }
+      });
     }
 
     answerButtons.forEach((button) => {
