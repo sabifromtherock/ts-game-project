@@ -32,7 +32,7 @@ To get started with the Morse Code Translator, follow these steps:
 ## Usage
 
 1. Open your web browser and navigate to `http://localhost:5173` (or the port specified by Vite)<br>
-   or visit `https://sabifromtherock.github.io/ts-game-project/`
+   or visit [`https://sabifromtherock.github.io/ts-game-project/`](https://sabifromtherock.github.io/ts-game-project/)
 2. Familiarize yourself with the rules, and then click the 'Let's play' button to begin the game.
 
 ## Tech stack
